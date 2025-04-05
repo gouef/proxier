@@ -1,3 +1,3 @@
-module github.com/gouef/github-lib-template
+module github.com/gouef/proxier
 
-go 1.23.4
+go 1.24.2
