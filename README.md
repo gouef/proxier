@@ -1,29 +1,21 @@
 <img align=right width="168" src="docs/gouef_logo.png">
 
-# github-lib-template
+# proxier
 Github template for new libraries
 
-[![Static Badge](https://img.shields.io/badge/Github-gouef%2Fgithub--lib--template-blue?style=for-the-badge&logo=github&link=github.com%2Fgouef%2Fgithub-lib-template)](https://github.com/gouef/github-lib-template)
+[![Static Badge](https://img.shields.io/badge/Github-gouef%2Fproxier-blue?style=for-the-badge&logo=github&link=github.com%2Fgouef%2Fproxier)](https://github.com/gouef/proxier)
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/gouef/github-lib-template.svg)](https://pkg.go.dev/github.com/gouef/github-lib-template)
-[![GitHub stars](https://img.shields.io/github/stars/gouef/github-lib-template?style=social)](https://github.com/gouef/github-lib-template/stargazers)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gouef/github-lib-template)](https://goreportcard.com/report/github.com/gouef/github-lib-template)
-[![codecov](https://codecov.io/github/gouef/github-lib-template/branch/main/graph/badge.svg?token=YUG8EMH6Q8)](https://codecov.io/github/gouef/github-lib-template)
+[![GoDoc](https://pkg.go.dev/badge/github.com/gouef/proxier.svg)](https://pkg.go.dev/github.com/gouef/proxier)
+[![GitHub stars](https://img.shields.io/github/stars/gouef/proxier?style=social)](https://github.com/gouef/proxier/stargazers)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gouef/proxier)](https://goreportcard.com/report/github.com/gouef/proxier)
+[![codecov](https://codecov.io/github/gouef/proxier/branch/main/graph/badge.svg?token=YUG8EMH6Q8)](https://codecov.io/github/gouef/proxier)
 
 ## Versions
-![Stable Version](https://img.shields.io/github/v/release/gouef/github-lib-template?label=Stable&labelColor=green)
-![GitHub Release](https://img.shields.io/github/v/release/gouef/github-lib-template?label=RC&include_prereleases&filter=*rc*&logoSize=diago)
-![GitHub Release](https://img.shields.io/github/v/release/gouef/github-lib-template?label=Beta&include_prereleases&filter=*beta*&logoSize=diago)
+![Stable Version](https://img.shields.io/github/v/release/gouef/proxier?label=Stable&labelColor=green)
+![GitHub Release](https://img.shields.io/github/v/release/gouef/proxier?label=RC&include_prereleases&filter=*rc*&logoSize=diago)
+![GitHub Release](https://img.shields.io/github/v/release/gouef/proxier?label=Beta&include_prereleases&filter=*beta*&logoSize=diago)
 
 
-## Introduction
-
-This is template repository for new libraries
-
-## Important
-
-- Edit go.mod and rename to your package module
-- Uncomment .github/workflows/tests.yml
 
 ## Contributing
 
