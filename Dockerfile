@@ -13,7 +13,7 @@ COPY config.yaml .
 RUN chmod +x proxier
 
 EXPOSE 80
-EXPOSE 443mak
+EXPOSE 443
 CMD ["/app/proxier"]
 
 
