@@ -1,0 +1,26 @@
+listen_http: ":80"
+listen_https: ":8443"
+
+routes:
+  - host: "proxier.gouef.local"
+    path: "/"
+    target: "http://host.docker.internal:8081"
+  - host: "web-project.gouef.local"
+    path: "/"
+    target: "http://host.docker.internal:8081"
+  - host: "gouef.local"
+    path: "/"
+    target: "http://host.docker.internal:8081"
+
+  - host: "sub.example.com"
+    path: "/"
+    target: "http://localhost:4000"
+
+tls:
+  use_lets_encrypt: false
+  cert_file: ""
+  key_file: ""
+#  cache_dir: ".cache"
+  cache_dir: ""
+  email: ""
+  hosts: []
