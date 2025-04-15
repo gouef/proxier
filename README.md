@@ -1,7 +1,7 @@
 <img align=right width="168" src="docs/gouef_logo.png">
 
 # proxier
-Github template for new libraries
+Lightweight proxy
 
 [![Static Badge](https://img.shields.io/badge/Github-gouef%2Fproxier-blue?style=for-the-badge&logo=github&link=github.com%2Fgouef%2Fproxier)](https://github.com/gouef/proxier)
 
@@ -16,6 +16,47 @@ Github template for new libraries
 ![GitHub Release](https://img.shields.io/github/v/release/gouef/proxier?label=Beta&include_prereleases&filter=*beta*&logoSize=diago)
 
 
+## Configuration
+
+```yaml
+listen_http: ":80"
+listen_https: ":8443"
+
+routes:
+  - host: "proxier.gouef.local"
+    path: "/"
+    target: "http://host.docker.internal:8081"
+  - host: "web-project.gouef.local"
+    path: "/"
+    target: "http://host.docker.internal:8081"
+  - host: "gouef.local"
+    path: "/"
+    target: "http://host.docker.internal:8081"
+
+  - host: "sub.example.com"
+    path: "/"
+    target: "http://localhost:4000"
+
+# TLS is in testing
+tls:
+  use_lets_encrypt: false
+  cert_file: ""
+  key_file: ""
+#  cache_dir: ".cache"
+  cache_dir: ""
+  email: ""
+  hosts: []
+
+```
+
+## Run
+
+```shell
+docker run --rm -d -p 80:80 -p 443:443 \
+-v ./config.yaml:/app/config.yaml \
+--add-host host.docker.internal:host-gateway \
+--name proxier gouef/proxier:latest
+```
 
 ## Contributing
 
