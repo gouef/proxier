@@ -20,7 +20,7 @@ Lightweight proxy
 
 ```yaml
 listen_http: ":80"
-listen_https: ":8443"
+listen_https: ":443"
 
 routes:
   - host: "proxier.gouef.local"
