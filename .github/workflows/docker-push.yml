@@ -37,3 +37,19 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/${{ steps.repo_name.outputs.REPO_NAME }}:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/${{ steps.repo_name.outputs.REPO_NAME }}:${{ steps.get_tag.outputs.TAG }}
+      - name: Upload README to Docker Hub
+        env:
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+        run: |
+          REPO_NAME=${GITHUB_REPOSITORY#*/}
+          DESCRIPTION=$(jq -Rs '.' < README.md)
+
+          TOKEN=$(curl -s -H "Content-Type: application/json" \
+            -X POST -d '{"username": "'"$DOCKER_HUB_USERNAME"'", "password": "'"$DOCKER_HUB_TOKEN"'"}' \
+            https://hub.docker.com/v2/users/login/ | jq -r .token)
+
+          curl -X PATCH "https://hub.docker.com/v2/repositories/$DOCKER_HUB_USERNAME/$REPO_NAME/" \
+            -H "Authorization: JWT $TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"full_description\": $DESCRIPTION}"
