@@ -1,4 +1,4 @@
-<img align=right width="168" src="docs/gouef_logo.png">
+<img align=right width="168" src="https://raw.githubusercontent.com/gouef/proxier/refs/heads/main/docs/gouef_logo.png">
 
 # proxier
 Lightweight proxy
