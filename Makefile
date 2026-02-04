@@ -1,4 +1,4 @@
-.PHONY: install tests coverage docker-run docker-stop docker-restart docker-debug docker-clear docker-logs
+.PHONY: install tests coverage docker-run docker-stop docker-restart docker-debug docker-clear docker-logs podman-run podman-stop podman-restart podman-debug podman-clear podman-logs
 
 install:
 	go mod tidy && go mod vendor
@@ -29,3 +29,26 @@ docker-clear:
 
 docker-logs:
 	docker logs proxier
+
+#Podman
+podman-run:
+	sudo podman run --rm -d -v ./config.yaml:/app/config.yaml:Z --network=host --name proxier gouef/proxier
+
+podman-stop:
+	sudo podman stop proxier
+
+podman-restart:
+	-@$(MAKE) podman-stop
+	@$(MAKE) podman-run
+
+podman-build:
+	podman build -t gouef/proxier .
+
+podman-debug:
+	sudo podman run -it gouef/proxier:latest /bin/sh
+
+podman-clear:
+	podman container rm proxier
+
+podman-logs:
+	sudo podman logs proxier
